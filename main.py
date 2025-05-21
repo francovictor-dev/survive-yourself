@@ -158,6 +158,9 @@ def on_mouse_down(pos):
      music.play("battle")
      frame = 0
 
+   if menu_rect_quit_text.collidepoint(pos):
+      exit()
+
    if is_actived_songs:
       music.set_volume(1)
       for sound in sounds_list:
@@ -413,17 +416,6 @@ all_enemies = [
 
 all_game_objects = [
    hero,
-   Enemy(
-      life_point=20, 
-      attack_value=2, 
-      enemy=Actor("slime_1"), 
-      tag="enemy", 
-      moviment_value=random.uniform(0.5, 2), 
-      frames=["slime_1", "slime_2"], 
-      x=random.choice([0, WIDTH]), 
-      y=random.choice([0, HEIGHT]),
-      points=100
-    ),
 ]
 
 
